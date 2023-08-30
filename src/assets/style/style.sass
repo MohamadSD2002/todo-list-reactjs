@@ -1,0 +1,152 @@
+$xs-size: 5px
+$sm-size: 7px
+$md-size: 10px
+$lg-size: 15px
+$xl-size: 17px
+$width-full: 100%
+$color-black: #1a150e
+$color-white: #ffffff
+
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+  border: none
+  outline: none
+
+@mixin felex-column-center
+  display: flex
+  flex-direction: column
+  align-items: center
+
+@mixin felex-between
+  display: flex
+  justify-content: space-between
+  align-items: center
+
+@mixin edit-remove-btn
+  padding: $sm-size 0
+  font-size: $lg-size
+  border-radius: $lg-size
+  margin: 0 0 0 $xs-size
+  background-color: $color-white
+  color: $color-black
+  min-width: 100px
+
+body
+  @include felex-column-center
+  background-image: linear-gradient(to bottom right, #d8f2ff, #fcfeff)
+  height: 100vh
+
+#header
+  min-height: 10vh
+  width: $width-full
+
+#header
+  @include felex-between
+  flex-direction: column
+  font-size: 3rem
+  min-height: 25vh
+  width: $width-full
+
+#title
+  border-right: solid 3px #b7bfc3
+  letter-spacing: 0.20rem
+  margin-top: 50px
+  margin-bottom: 20px
+  max-width: 480px
+
+.total-clear
+  @include felex-between
+  max-width: 600px
+
+.add-todo
+  display: flex
+  font-size: 1.7rem
+  justify-content: center
+  margin: $lg-size 0
+  padding: 0.8rem
+  width: $width-full
+
+.todo-input
+  padding: $md-size
+  font-size: $xl-size
+  background-color: #aeb1b4
+  border-radius: $xl-size 0 0 $xl-size
+  min-width: 500px
+  width: $width-full
+
+.todo-btn
+  padding: $md-size
+  font-size: $xl-size
+  border-radius: 0 $lg-size $lg-size 0
+  min-width: 100px
+  background-color: $color-white
+  color: $color-black
+
+button:hover
+  cursor: pointer
+  background-color: #f0f0f0
+
+ul
+  @include felex-column-center
+  list-style: none
+  min-width: 25%
+
+.todo
+  @include felex-between
+  background: #aeb1b4
+  color: $color-black
+  font-size: 19px
+  padding: 0 0.5em
+  margin: $lg-size 0
+  border-radius: 30px
+  width: 90%
+  height: 2.5em
+
+.submit-edit, .remove
+  @include edit-remove-btn
+
+.edit-input
+  padding: $sm-size 10px
+  font-size: $lg-size
+  background-color: $color-white
+  border-radius: $xl-size
+  min-width: 250px
+
+.clear-all
+  @include felex-column-center
+  border-radius: $lg-size
+  width: $width-full
+  button
+    padding: $md-size
+    font-size: $xl-size
+    border-radius: 30px
+    background-color: $color-white
+    color: $color-black
+    width: 90%
+  button:hover
+    cursor: pointer
+    background-color: #f0f0f0
+
+.li-todo
+  max-width: 200px
+
+.text-todo
+  position: relative
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
+
+.box-todo
+  position: absolute
+  margin-top: -34px
+  margin-left: -9px
+  padding: 12px 9px 0px 9px
+  height: 2.45em
+  max-width: 300px
+  border-radius: 30px
+  word-wrap: break-word
+  z-index: 1
+  background-color: #aeb1b4
+
